@@ -21,10 +21,20 @@ const items = [
 ];
 
 class TodoApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: "" };
+    this.addTodo = this.addTodo.bind(this);
+  }
+
+  addTodo(value){
+    this.setState({ value });
+  }
+
   render() {
     return (
       <div className="todo-app">
-        <TodoAdd />
+        <TodoAdd value={this.state.value} onChange={this.addTodo} />
         <TodoList items={items} />
       </div>
     );
