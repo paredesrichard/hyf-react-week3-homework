@@ -10,7 +10,7 @@ function TodoAdd(props) {
         }}
         value={props.value}
       />
-      <button>Add Todo</button>
+      <button onClick={props.onButtonClick}>Add Todo</button>
     </div>
   );
 }
